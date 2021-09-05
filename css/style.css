@@ -57,7 +57,7 @@ main {
 .input--section input {
   margin: 1rem;
   border-radius: 5px;
-  height: 1.5vw;
+  height: 20%vw;
 }
 .submit--section {
   padding: 4rem;
@@ -67,4 +67,8 @@ main {
   border-radius: 15px;
   width: 10vw;
   height: 5vh;
+}
+.submit--section button:active {
+  transform: translateY(20%);
+  transition: 0.2s;
 }
