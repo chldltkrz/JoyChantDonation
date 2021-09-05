@@ -20,8 +20,8 @@ body {
 }
 main {
   position: relative;
-  width: 60rem;
-  height: 80rem;
+  width: var(inherit * 60%);
+  height: var(inherit * 80%);
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -29,35 +29,44 @@ main {
   border-radius: 9px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-
-.image--section {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+.wrapper {
+  margin-top: 7%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-.image--section img {
+.wrapper img {
   width: 100%;
   border-radius: 50px;
 }
 .input--section {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-right: 4rem;
-  padding-left: 4rem;
+  margin-top: 2.5%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 80%;
+  width: 100%;
 }
 .input--section p {
-  font-size: 1.5rem;
-  margin: 1rem;
+  width: 30%;
+  float: left;
+  font-size: 1.5vw;
 }
 .input--section input {
-  margin: 1rem;
-  border-radius: 5px;
-  height: 20%vw;
+  width: 70%;
+  float: left;
+  height: 3vw;
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid lightgrey;
+  transition: all 0.3s;
 }
 .submit--section {
   padding: 4rem;
@@ -65,10 +74,32 @@ main {
 .submit--section button {
   background-color: rgba(243, 170, 182, 0.801);
   border-radius: 15px;
-  width: 10vw;
+  width: 100%;
   height: 5vh;
+  font-size: 2vw;
 }
+.submit--section button {
+  display: inline-block;
+  background-color: pink;
+  font-size: 1.6rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  padding: 1.25rem 4.5rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.submit--section button:link,
+.submit--section button:visited {
+  padding: 0.8rem 2.5rem;
+  border-radius: 3rem;
+  background-color: darkgray;
+}
+
 .submit--section button:active {
-  transform: translateY(20%);
-  transition: 0.2s;
+  color: inherit;
+  background-color: lightpink;
+  transform: translateY(10%);
+  transition: all 0.1s;
 }
