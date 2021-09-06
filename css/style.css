@@ -51,12 +51,12 @@ main {
 .input--section p {
   width: 30%;
   float: left;
-  font-size: 1.5vw;
+  font-size: 2rem;
 }
 .input--section input {
   width: 70%;
   float: left;
-  height: 3vw;
+  height: 4rem;
   border: none;
   padding: 0.5rem 2rem;
   font-size: 1.6rem;
@@ -72,20 +72,14 @@ main {
   padding: 4rem;
 }
 .submit--section button {
+  width: 100%;
+  height: 10vh;
   background-color: rgba(243, 170, 182, 0.801);
   border-radius: 15px;
-  width: 100%;
-  height: 5vh;
-  font-size: 2vw;
-}
-.submit--section button {
-  display: inline-block;
-  background-color: pink;
-  font-size: 1.6rem;
+  font-size: var(inherit * 50%);
   font-family: inherit;
   font-weight: 500;
   border: none;
-  padding: 1.25rem 4.5rem;
   border-radius: 10rem;
   cursor: pointer;
   transition: all 0.3s;
