@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
 * {
   margin: 0;
@@ -24,8 +25,6 @@ body {
 }
 main {
   position: relative;
-  width: var(inherit * 60%);
-  height: var(inherit * 80%);
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -35,48 +34,28 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.wrapper {
+  text-align: center;
 }
 .wrapper img {
-  width: 450px;
+  width: 500px;
   border-radius: 50px;
-  padding: 50px;
+  padding: 50px 50px 0px;
 }
-.input--section {
-  margin-top: 2.5%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
+.exp--section .title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: "Hanna", fantasy;
 }
-.input--section p {
-  text-align: right;
-  padding-right: 5%;
-  width: 30%;
-  float: right;
-  font-size: 2rem;
+.exp--section .content {
+  font-size: 15px;
+  width: 45ch;
+  margin: auto;
 }
-.input--section input {
-  width: 70%;
-  float: left;
-  height: 4rem;
-  border: none;
-  padding: 0.5rem 2rem;
-  font-size: 1.6rem;
-  font-family: inherit;
-  text-align: center;
-  border-radius: 10rem;
-  margin-right: 1rem;
-  color: inherit;
-  border: 1px solid lightgrey;
-  transition: all 0.3s;
-}
-.submit--section {
+
+.modal--section {
   padding: 4rem;
 }
-.submit--section button {
+.modal--section button {
   width: 100%;
   height: 10vh;
   background-color: rgba(243, 170, 182, 0.801);
@@ -88,18 +67,159 @@ main {
   cursor: pointer;
   transition: all 0.3s;
 }
-.submit--section button:link,
-.submit--section button:visited {
+.modal--section button:link,
+.modal--section button:visited {
   padding: 0.8rem 2.5rem;
   border-radius: 3rem;
   background-color: darkgray;
 }
-.submit--section button:hover {
+.modal--section button:hover {
   transform: scale(1.05) rotate(-1deg);
 }
-.submit--section button:active {
+.modal--section button:active {
   color: inherit;
   background-color: lightpink;
+  transform: translateY(10%);
+  transition: all 0.1s;
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.modal .title {
+  font-size: 5em;
+  text-align: center;
+}
+
+.input--section {
+  margin-top: 2.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.input--section p {
+  text-align: right;
+  font-stretch: expanded;
+  padding-right: 5%;
+  width: 25%;
+  float: right;
+  font-size: 2rem;
+}
+.input--section input {
+  width: 80%;
+  float: left;
+  height: 4rem;
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  border-radius: 10rem;
+  margin-right: 3rem;
+  color: inherit;
+  border: 1px solid lightgrey;
+  transition: all 0.3s;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* CSS */
+.submit--button {
+  appearance: button;
+  background-color: #e85c81;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin-top: 20px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.submit--button:after {
+  background-clip: padding-box;
+  background-color: pink;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.submit--button:main,
+.submit--button:focus {
+  user-select: auto;
+}
+
+.submit--button:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.submit--button:disabled {
+  cursor: auto;
+}
+
+.submit--button:active {
   transform: translateY(10%);
   transition: all 0.1s;
 }
